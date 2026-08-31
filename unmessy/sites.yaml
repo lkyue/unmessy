@@ -1,0 +1,21 @@
+# Site-specific content-region rules.
+# Cascade: first rule whose `match` appears in the page URL's netloc wins;
+# within it, the first selector yielding enough text is used.
+rules:
+  - match: vle.cam.ac.uk
+    name: Moodle
+    selectors:
+      - "#region-main"
+      - "[role='main']"
+
+  - match: sharepoint.com
+    name: SharePoint
+    selectors:
+      - "div[data-automation-id='canvasSection']"
+      - "#spPageChromeAppDiv [data-automation-id='CanvasContent']"
+      - "#spPageChromeAppDiv"
+
+  - match: learn.microsoft.com
+    name: MS Learn
+    selectors:
+      - "main"
